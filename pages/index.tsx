@@ -69,8 +69,47 @@ export default function Home({ postsFirstPage }) {
       <Header />
 
       <article className={styles.posts}>
-        {posts.map((post) => {
-          return <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} />;
+        {posts.map((post, index) => {
+          switch ((index + 1) % 6) {
+            case 1:
+              return (
+                <div key={index}>
+                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} />
+                </div>
+              );
+            case 2:
+              return (
+                <div key={index} className={`${styles.rightSmall} ${styles.postsGap}`} style={{ bottom: 'calc(50vw/3)' }}>
+                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} />
+                </div>
+              );
+            case 3:
+              return (
+                <div key={index} className={`${styles.rightBig} ${styles.postsGap}`}>
+                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} big />
+                </div>
+              );
+            case 4:
+              let style = {};
+              index === posts.length - 1 && (style = { marginBottom: 'calc(50vw/3 + 4.2vw)' });
+              return (
+                <div key={index} className={styles.rightSmall} style={style}>
+                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} reverse />
+                </div>
+              );
+            case 5:
+              return (
+                <div key={index} className={styles.postsGap}>
+                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} reverse />
+                </div>
+              );
+            case 0:
+              return (
+                <div key={index} className={styles.postsGap}>
+                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} big />
+                </div>
+              );
+          }
         })}
 
         {!loading && hasPosts && <div ref={loader}></div>}

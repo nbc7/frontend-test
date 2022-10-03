@@ -1,3 +1,5 @@
+$imageSize: calc(50vw/3);
+
 .posts {
     height: calc(100vh - 100px);
     overflow-y: scroll;
@@ -9,4 +11,21 @@
     &::-webkit-scrollbar {
         display:none;
     }
+}
+
+.rightBig {
+    position: relative;
+    right: calc(-50vw + $imageSize);
+    width: 0;
+}
+
+.rightSmall {
+    position: relative;
+    right: -50vw;
+    height: 0;
+    width: 0;
+}
+
+.postsGap {
+    margin-bottom: 4.2vw;//80px
 }
