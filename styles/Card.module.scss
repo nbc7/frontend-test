@@ -20,7 +20,7 @@ $imageSize: calc(50vw/3);
     
     .content {
         background: white;
-        padding: 0px calc($imageSize/4);//35px 80px
+        padding: 0px calc($imageSize/4);//80px
         display: flex;
         align-items: center;
         position: relative;
@@ -56,13 +56,16 @@ $imageSize: calc(50vw/3);
         }
 
         .readMore {
-            width: 24px;
-            height: 24px;
+            margin: 4px 0;
             display: flex;
             align-items: center;
             position: absolute;
             bottom: 2.085vw;//40px
             right: 2.085vw;//40px
+            padding: 0;
+            border: none;
+            background: none;
+            cursor: pointer;
         }
 
     }

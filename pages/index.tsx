@@ -74,19 +74,19 @@ export default function Home({ postsFirstPage }) {
             case 1:
               return (
                 <div key={index}>
-                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} />
+                  <Card key={post.id} post={post} />
                 </div>
               );
             case 2:
               return (
                 <div key={index} className={`${styles.rightSmall} ${styles.postsGap}`} style={{ bottom: 'calc(50vw/3)' }}>
-                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} />
+                  <Card key={post.id} post={post} />
                 </div>
               );
             case 3:
               return (
                 <div key={index} className={`${styles.rightBig} ${styles.postsGap}`}>
-                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} big />
+                  <Card key={post.id} post={post} big />
                 </div>
               );
             case 4:
@@ -94,19 +94,19 @@ export default function Home({ postsFirstPage }) {
               index === posts.length - 1 && (style = { marginBottom: 'calc(50vw/3 + 4.2vw)' });
               return (
                 <div key={index} className={styles.rightSmall} style={style}>
-                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} reverse />
+                  <Card key={post.id} post={post} reverse />
                 </div>
               );
             case 5:
               return (
                 <div key={index} className={styles.postsGap}>
-                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} reverse />
+                  <Card key={post.id} post={post} reverse />
                 </div>
               );
             case 0:
               return (
                 <div key={index} className={styles.postsGap}>
-                  <Card key={post.id} imageUrl={post.imageUrl} author={post.author} title={post.title} article={post.article} big />
+                  <Card key={post.id} post={post} big />
                 </div>
               );
           }
