@@ -1,4 +1,5 @@
 $black:#2D2D2D;
+$orange: #F1A10A;
 
 .container {
     width: 100vw;
@@ -15,10 +16,164 @@ $black:#2D2D2D;
         font-weight: 700;
     }
     
-    div{
+    .menu{
         display: flex;
         gap: 6.35vw;//118px
         font-size: 32px;
         font-weight: 500;
+
+        a{
+            text-decoration: none;
+
+            &:visited {
+                color: white;
+            }
+
+            &:hover{
+                color: $orange;
+            }
+        }
+
+        button {
+            background: none;
+            padding: 0;
+            border: none;
+            cursor: pointer;
+            font-size: 32px;
+            font-weight: 500;
+            font-family: 'Rubik', sans-serif;
+            color: white;
+
+            &:hover{
+                color: $orange;
+            }
+        }
+    }
+    
+        .background{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: rgb(0 0 0 / 60%);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        
+        &::-webkit-scrollbar {
+            display:none;
+        }
+        
+        .dialog{
+            background: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // margin: 459px 555px;
+            margin: 459px;
+            padding: 42px;
+            width: 726px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 1.25vw;//24px
+            line-height: 1.77vw;//34px
+            
+            .close{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                
+                button{
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    cursor: pointer;
+                }
+            }
+
+            h1 {
+                color: $orange;
+                font-size: 36px;
+                font-weight: 700;
+                margin: 0px 0 50px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+                width: 100%;
+                padding: 0 80px;
+
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    
+                    &:last-child{
+                        align-items: center;
+                    }
+                }
+                
+                span {
+                    margin-bottom: 4px;
+                }
+                
+                input,textarea {
+                    color: $black;
+                    font-size: 1.25vw;//24px
+                    line-height: 1.77vw;//34px
+                    border: 1px solid $black;
+                    padding: 20px;
+                    
+                    &:focus-visible{
+                        outline: $orange solid;
+                    }
+                    
+                    &::placeholder{
+                        color: rgba($black, 0.51);
+                    }
+                }
+                
+                textarea {
+                    resize: none;
+                    height: 200px;
+                }
+
+                input,textarea,button{
+                    border-radius: 4px;
+                }
+
+                button {
+                    background: $black;
+                    color: white;
+                    border: none;
+                    font-family: 'Rubik', sans-serif;
+                    font-weight: 500;
+                    font-size: 1.25vw;//24px
+                    line-height: 1.77vw;//34px
+                    padding: 13px;
+                    margin: 12px 0 58px;
+                    width: 230px;
+                    
+                    &:hover {
+                        background: rgba($black, 0.9);
+                        cursor: pointer;
+                    }
+                    
+                    div {
+                        // display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        gap: 38px;
+                    }
+                }
+            }
+        }
     }
 }
