@@ -1,54 +1,28 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
+import Dialog from './Dialog';
+
 import styles from '../styles/Header.module.scss';
 
 export default function Header() {
   const [showDialog, setShowDialog] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const Dialog = () => {
+  const Menu = () => {
     return (
-      <div className={styles.background}>
-        <div className={styles.dialog}>
-          <div className={styles.close}>
-            <button type="button" onClick={() => setShowDialog(false)}>
-              <Image src="/Close.svg" alt="close" width={48} height={48} />
-            </button>
-          </div>
+      <div className={styles.backgroundMenu}>
+        <a href="/">Posts</a>
 
-          <h1>Contact</h1>
-
-          <form>
-            <div>
-              <span>Name</span>
-              <input type="text" placeholder="Fill your full name" />
-            </div>
-
-            <div>
-              <span>E-mail</span>
-              <input type="email" placeholder="Fill a valid e-mail" />
-            </div>
-
-            <div>
-              <span>Phone</span>
-              <input type="phone" placeholder="Fill your phone" />
-            </div>
-
-            <div>
-              <span>Post</span>
-              <textarea placeholder="Hello..." />
-            </div>
-
-            <div>
-              <button type="button" onClick={(e) => console.log(e)}>
-                <div>
-                  <Image src="/Send.svg" alt="close" width={24} height={24} />
-                  Submit
-                </div>
-              </button>
-            </div>
-          </form>
-        </div>
+        <button
+          type="button"
+          onClick={() => {
+            setShowMenu(false);
+            setShowDialog(true);
+          }}
+        >
+          Contact
+        </button>
       </div>
     );
   };
@@ -65,7 +39,12 @@ export default function Header() {
         </button>
       </div>
 
-      {showDialog && <Dialog />}
+      <button type="button" className={styles.menuMobile} onClick={() => setShowMenu((prev) => !prev)}>
+        {showMenu ? <Image src="/Close.svg" alt="close" width={38} height={38} /> : <Image src="/Menu.svg" alt="menu" width={38} height={38} />}
+      </button>
+
+      {showDialog && <Dialog returnShowDialog={(bool) => setShowDialog(bool)} />}
+      {showMenu && <Menu />}
     </header>
   );
 }
