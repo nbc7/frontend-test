@@ -21,62 +21,55 @@ $imageSize: calc(50vw/3);
   margin: 5.25vw $imageSize;
 
   .card {
-      display: flex;
-      width: 100%;
-      // height: calc($imageSize*2);
-      
-      .image{
-          position: relative;
-          width: calc($imageSize*2);
-          height: calc($imageSize*2);
+    display: flex;
+    width: 100%;
+    
+    .image{
+      position: relative;
+      width: calc($imageSize*2);
+      height: calc($imageSize*2);
 
-          img{
-              object-fit: contain;
-          }
+      img{
+          object-fit: contain;
       }
+    }
+  
+    .content {
+      padding: 0px 6.25vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 50%;
       
-      .content {
-          // background: white;
-          padding: 0px 6.25vw;//80px
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          // position: relative;
-          max-width: 50%;
-          
-          .contentInner {
-              // height: 100%;
-              display: flex;
-              flex-direction: column;
-              // justify-content: space-between;
-              color: $black;
-              // max-height: 13.025vw;//250px
-              gap: 2.25vw;
-              
-              .date{
-                font-size: 0.938vw;//18px
-                line-height: 1.25vw;//24px
-              }
-              
-              .author{
-                font-size: 1.25vw;//24px
-                line-height: 1.77vw;//34px
-              }
-              
-            }
-            
-            .title {
-              
-              h1{
-                  color: $orange;
-                  font-size: 1.875vw;//36px
-                  font-weight: 700;
-                  margin: 7px 0px 13px;
-                  max-height: 22.5vw;
-                  overflow: hidden;
-              }
-          }
+      .contentInner {
+        display: flex;
+        flex-direction: column;
+        color: $black;
+        gap: 2.25vw;
+        
+        .date{
+          font-size: 18px;
+          line-height: 24px;
+        }
+        
+        .author{
+          font-size: 24px;
+          line-height: 34px;
+        }
       }
+        
+      .title {
+        
+        h1{
+          color: $orange;
+          font-size: 36px;
+          font-weight: 700;
+          margin: 7px 0px 13px;
+          max-height: 390px;
+          overflow: hidden;
+        }
+      }
+    }
   }
 
   .postArticle {
@@ -84,8 +77,154 @@ $imageSize: calc(50vw/3);
 
     p{
       color: $black;
-      font-size: 1.25vw;//24px
-      line-height: 1.77vw;//34px
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 639px) { 
+
+  .post{
+    width: 90%;
+    margin: 0 5%;
+  
+    .card {
+      flex-direction: column;
+      
+      .image{
+        width: 90vw;
+        height: 90vw;
+      }
+        
+      .content {
+        padding: 6.25vw 6.25vw 0;
+        max-width: 100%;
+            
+        .title {
+          
+          h1 {
+            margin: 13px 0;
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  
+    .postArticle {
+      padding: 0 6.25vw 6.25vw;
+    }
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) { 
+
+  .post{
+    width: 80%;
+    margin: 5.25vw 10%;
+  
+    .card {
+      flex-direction: column;
+      
+      .image{
+        width: 80vw;
+        height: 80vw;
+      }
+        
+      .content {
+        padding: 6.25vw;
+        max-width: 100%;
+            
+        .title {
+          
+          h1 {
+            margin: 13px 0;
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  
+    .postArticle {
+      padding: 0 6.25vw 6.25vw;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) { 
+
+  .post{
+    width: 70%;
+    margin: 5.25vw 15%;
+  
+    .card {
+      flex-direction: column;
+      
+      .image{
+        width: 70vw;
+        height: 70vw;
+      }
+        
+      .content {
+        padding: 6.25vw;
+        max-width: 100%;
+            
+        .title {
+          
+          h1 {
+            margin: 13px 0;
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  
+    .postArticle {
+      padding: 0 6.25vw 6.25vw;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) { 
+
+  .post{
+    margin: 5.25vw 5%;
+  
+    .card {
+      
+      .image{
+        width: 45vw;
+        height: 45vw;
+      }
+
+      .content {
+            
+        .title {
+          
+          h1 {
+            max-height: 345px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1599px) { 
+
+  .post{
+  
+    .card {
+
+      .content {
+            
+        .title {
+          
+          h1 {
+            max-height: 305px;
+          }
+        }
+      }
     }
   }
 }
