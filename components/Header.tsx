@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import Dialog from './Dialog';
@@ -12,7 +13,7 @@ export default function Header() {
   const Menu = () => {
     return (
       <div className={styles.backgroundMenu}>
-        <a href="/">Posts</a>
+        <Link href="/">Posts</Link>
 
         <button
           type="button"
@@ -32,7 +33,7 @@ export default function Header() {
       <h1>Rockr Blog</h1>
 
       <div className={styles.menu}>
-        <a href="/">Posts</a>
+        <Link href="/">Posts</Link>
 
         <button type="button" onClick={() => setShowDialog(true)}>
           Contact
