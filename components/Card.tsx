@@ -16,7 +16,7 @@ export default function Card(props: Props) {
   return (
     <div className={`${styles.card} ${props.reverse ? styles.reverse : ''} ${props.big ? styles.big : ''}`}>
       <div className={styles.image}>
-        <Image src={props.post.imageUrl} layout="fill" />
+        <Image src={props.post.imageUrl} alt="Post image" layout="fill" />
       </div>
 
       <div className={styles.content}>
@@ -30,7 +30,7 @@ export default function Card(props: Props) {
 
         <Link href={`/posts/${props.post.id}`}>
           <button type="button" className={styles.readMore}>
-            <Image src="/Vector.svg" alt="close" width={24} height={24} />
+            <Image src="/Vector.svg" alt="Read more" width={24} height={16} />
           </button>
         </Link>
       </div>

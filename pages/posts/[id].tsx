@@ -32,7 +32,7 @@ export default function Post({ post }: PostProps) {
         <article className={styles.post}>
           <div className={styles.card}>
             <div className={styles.image}>
-              <Image src={post.imageUrl} layout="fill" />
+              <Image src={post.imageUrl} alt="Post image" layout="fill" />
             </div>
 
             <div className={styles.content}>
