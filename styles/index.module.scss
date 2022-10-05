@@ -1,31 +1,47 @@
-$imageSize: calc(50vw/3);
+$imageSize: calc(50vw / 3);
 
 .posts {
-    height: calc(100vh - 100px);
-    overflow-y: scroll;
-    padding: 60px 0;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  padding: 60px 0;
 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
-    &::-webkit-scrollbar {
-        display:none;
-    }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .rightBig {
-    position: relative;
-    right: calc(-50vw + $imageSize);
-    width: 0;
+  position: relative;
+  right: calc(-50vw + $imageSize);
+  width: 0;
 }
 
 .rightSmall {
-    position: relative;
-    right: -50vw;
-    height: 0;
-    width: 0;
+  position: relative;
+  right: -50vw;
+  height: 0;
+  width: 0;
 }
 
 .postsGap {
-    margin-bottom: 4.2vw;//80px
+  margin-bottom: 80px;
+}
+
+.secondPost {
+  bottom: calc(50vw / 3);
+}
+
+@media (min-width: 0px) and (max-width: 639px) {
+  .secondPost {
+    bottom: calc(50vw + 220px);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .secondPost {
+    bottom: calc(50vw + 270px);
+  }
 }

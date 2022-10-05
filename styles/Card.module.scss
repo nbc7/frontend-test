@@ -1,94 +1,249 @@
-$black:#2D2D2D;
-$orange: #F1A10A;
+$black: #2d2d2d;
+$orange: #f1a10a;
 
-$imageSize: calc(50vw/3);
+$imageSize: calc(50vw / 3);
 
 .card {
-    display: flex;
-    width: 50vw;
+  display: flex;
+  width: 50vw;
+  height: $imageSize;
+
+  .image {
+    position: relative;
+    width: $imageSize;
     height: $imageSize;
-    
-    .image{
-        position: relative;
-        width: $imageSize;
-        height: $imageSize;
 
-        img{
-            object-fit: contain;
-        }
+    img {
+      object-fit: contain;
     }
-    
-    .content {
-        background: white;
-        padding: 0px calc($imageSize/4);//80px
-        display: flex;
-        align-items: center;
-        position: relative;
-        max-width: calc($imageSize * 2);
-        
-        .contentInner {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: $black;
-            max-height: 13.025vw;//250px
-            
-            span,p{
-                font-size: 1.25vw;//24px
-                line-height: 1.77vw;//34px
-                margin: 0;
-            }
-            
-            h1{
-                color: $orange;
-                font-size: 1.875vw;//36px
-                font-weight: 700;
-                margin: 7px 0px 13px;
-                max-height: 4.5vw;
-                overflow: hidden;
-            }
+  }
 
-            p {
-                max-height: 5vw;
-                overflow: hidden;
-            }
-        }
+  .content {
+    background: white;
+    padding: 0px 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: calc($imageSize * 2);
 
-        .readMore {
-            margin: 4px 0;
-            display: flex;
-            align-items: center;
-            position: absolute;
-            bottom: 2.085vw;//40px
-            right: 2.085vw;//40px
-            padding: 0;
-            border: none;
-            background: none;
-            cursor: pointer;
-        }
+    .contentInner {
+      display: flex;
+      flex-direction: column;
+      color: $black;
+      height: 250px;
 
+      span,
+      p {
+        font-size: 24px;
+        line-height: 34px;
+        margin: 0;
+      }
+
+      h1 {
+        color: $orange;
+        font-size: 36px;
+        font-weight: 700;
+        margin: 7px 0px 13px;
+        height: 85px;
+        overflow: hidden;
+      }
+
+      p {
+        height: 95px;
+        overflow: hidden;
+      }
     }
+
+    .readMore {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 2vw;
+      right: 2vw;
+      margin: 2px;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+  }
 }
 
-.reverse{
-    flex-direction: row-reverse;
+.reverse {
+  flex-direction: row-reverse;
 }
 
-.big{
-    height: calc($imageSize*2);
-    width: calc(50vw + $imageSize);
+.big {
+  height: calc($imageSize * 2);
+  width: calc(50vw + $imageSize);
 
-    .image{
-        height: calc($imageSize*2);
-        width: calc($imageSize*2);
+  .image {
+    height: calc($imageSize * 2);
+    width: calc($imageSize * 2);
+  }
+
+  .content {
+    .contentInner {
+      height: 315px;
+
+      h1 {
+        margin: 24px 0 40px;
+      }
     }
+  }
+}
 
+@media (min-width: 0px) and (max-width: 639px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+    .image {
+      width: 50vw;
+      height: 50vw;
+    }
     .content {
-        align-items: center;
+      padding: 15px 2vw 40px;
+      max-width: 50vw;
 
-        .contentInner {
-            max-height: 16.41vw;//315px
+      .contentInner {
+        height: 165px;
+        width: 50vw;
+
+        span {
+          overflow: hidden;
+          height: 34px;
         }
+
+        h1 {
+          height: 45px;
+        }
+
+        p {
+          height: 65px;
+        }
+      }
     }
+  }
+
+  .big {
+    .image {
+      width: calc(calc(100vw / 3) * 2);
+      height: calc(calc(100vw / 3) * 2);
+    }
+    .content {
+      max-width: calc(calc(100vw / 3) * 2);
+      .contentInner {
+        height: 315px;
+        width: calc(calc(100vw / 3) * 2);
+
+        h1 {
+          margin: 24px 0 40px;
+          height: 85px;
+        }
+
+        p {
+          height: 95px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+    .image {
+      width: 50vw;
+      height: 50vw;
+    }
+    .content {
+      padding: 15px 45px 5px;
+      max-width: 50vw;
+    }
+  }
+
+  .big {
+    .image {
+      width: calc(calc(100vw / 3) * 2);
+      height: calc(calc(100vw / 3) * 2);
+    }
+    .content {
+      max-width: calc(calc(100vw / 3) * 2);
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .card {
+    .content {
+      padding: 0px 50px;
+
+      .contentInner {
+        height: 140px;
+
+        h1 {
+          height: 45px;
+        }
+
+        p {
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  .big {
+    .content {
+      .contentInner {
+        height: 250px;
+
+        h1 {
+          margin: 7px 0 13px;
+          height: 85px;
+        }
+
+        p {
+          height: 95px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1599px) {
+  .card {
+    .content {
+      padding: 0px 60px;
+
+      .contentInner {
+        height: 165px;
+
+        h1 {
+          height: 45px;
+        }
+
+        p {
+          height: 65px;
+        }
+      }
+    }
+  }
+
+  .big {
+    .content {
+      .contentInner {
+        height: 315px;
+
+        h1 {
+          margin: 24px 0 40px;
+          height: 85px;
+        }
+
+        p {
+          height: 95px;
+        }
+      }
+    }
+  }
 }

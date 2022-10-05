@@ -79,7 +79,7 @@ export default function Home({ postsFirstPage }) {
               );
             case 2:
               return (
-                <div key={index} className={`${styles.rightSmall} ${styles.postsGap}`} style={{ bottom: 'calc(50vw/3)' }}>
+                <div key={index} className={`${styles.rightSmall} ${styles.postsGap} ${styles.secondPost}`}>
                   <Card key={post.id} post={post} />
                 </div>
               );
